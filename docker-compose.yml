@@ -11,8 +11,13 @@ services:
     environment:
       - NEO4J_AUTH=neo4j/!Random_Password1234
     volumes:
-      # Neo4j perstistence stored in /data
-      - /neo4j/data:/data
-      - /neo4j/logs:/logs
-      - /neo4j/import:/var/lib/neo4j/import
-      - /neo4j/plugins:/plugins
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+      - neo4j_import:/var/lib/neo4j/import
+      - neo4j_plugins:/plugins
+
+volumes:
+  neo4j_data:
+  neo4j_logs:
+  neo4j_import:
+  neo4j_plugins:
