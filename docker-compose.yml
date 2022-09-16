@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  neo4j:
+    image: neo4j:4.4.11
+    ports:
+      # HTTPS access
+      - 7474:7474
+      # Bolt access
+      - 7687:7687
+    environment:
+      - NEO4J_AUTH=neo4j/!Random_Password1234
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+      - neo4j_import:/var/lib/neo4j/import
+      - neo4j_plugins:/plugins
+
+volumes:
+  neo4j_data:
+  neo4j_logs:
+  neo4j_import:
+  neo4j_plugins:
