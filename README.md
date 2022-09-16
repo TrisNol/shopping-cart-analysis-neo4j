@@ -5,6 +5,35 @@ The dataset employed can be found on Kaggle at: https://www.kaggle.com/datasets/
 After ingestion the data is modelled as follows
 ![](./images/DB-Design.png)
 
+## How to run this code?
+1. Download the [Kaggle dataset mentioned above](https://www.kaggle.com/datasets/acostasg/random-shopping-cart)
+2. Extract `dataset_group.csv` from the downloaded archive and place it in the `./data/` directory of this project
+3. Create a virtual environment 
+    ```sh
+    # replace <path_to_your_venv> with something like ./venv 
+    python -m venv <path_to_your_venv>
+    ```
+4. Activate the environemnt
+    ```sh
+    <path_to_your_venv>/Scripts/activate.[ps1|bat|sh]
+    ```
+5. Install all dependencis
+    ```sh
+    pip install -r requirements.txt
+    # alternative if pip is available under pip3
+    pip3 install -r requirements.txt
+    ```
+6. (optional) Deploy the Neo4j db locally
+    ```sh
+    docker-compose up -d
+    ```
+7. Validate credentials and URL used to connect to Neo4j (cell 5 in `notebook.ipynb`)
+    ```python
+    # These are the settings required for the db created with docker-compose
+    conn = Neo4jConnection("bolt://localhost:7687", "neo4j", "!Random_Password1234")
+    ```
+8. Run all notebook cells to populate the DB and define the required methods
+
 ## Theory
 The following definitions and formula are based on:
 * [Affinity Analysis (Market Basket Analysis)](https://towardsdatascience.com/affinity-analysis-market-basket-analysis-c8e7fcc61a21)
