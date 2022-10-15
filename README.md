@@ -45,6 +45,7 @@ The distinct set of items found in the Dataset `D` is described as
 $$ I = \{i_1, i_2, ..., i_n\} $$
 
 `X` and `Y` as subsets of `I` could be defined as
+
 $$ X = \{i_1, i_n\} $$
 $$ Y = \{i_2\} $$
 
@@ -66,4 +67,5 @@ $$ Lift(X \,\to\, Y) = \frac{Support(X \,\to\, Y)}{Support(X)*Support(Y)} = \fra
 
 ### Conviction
 To measure the frequency that `X` occurs without `Y` the conviction is calculated:
+
 $$ Conviction(X \,\to\, Y) = \frac{1-Support(Y)}{1-Confidence(X \,\to\, Y)} $$
