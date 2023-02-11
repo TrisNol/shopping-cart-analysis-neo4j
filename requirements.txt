@@ -9,7 +9,7 @@ entrypoints==0.4
 executing==1.0.0
 fonttools==4.37.2
 ipykernel==6.15.3
-ipython==8.5.0
+ipython==8.10.0
 jedi==0.18.1
 jupyter-core==4.11.2
 jupyter_client==7.3.5
